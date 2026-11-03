@@ -136,7 +136,7 @@ object BatDeepAnalysis {
                 val t = t0 + hh * 3_600_000L
                 if (t > rows[s.j].ts) break
                 while (kIdx + 1 <= s.j && rows[kIdx + 1].ts <= t) kIdx++
-                dsum[hh] += rows[kIdx].level; dcnt[hh]++; hh++
+                dsum[hh] += rows[kIdx].level.toFloat(); dcnt[hh]++; hh++
             }
         }
         val minCnt = maxOf(1, dSess / 3)
@@ -163,7 +163,7 @@ object BatDeepAnalysis {
                 for (q in s.i..s.j) {
                     val m = ((rows[q].ts - t0) / 600_000L).toInt()
                     if (m > 24) break
-                    lSum[m] += rows[q].level; lCnt[m]++
+                    lSum[m] += rows[q].level.toFloat(); lCnt[m]++
                     val x = rows[q]
                     if (x.currentMa != Int.MIN_VALUE && x.voltageMv > 0) { pSum[m] += Math.abs(x.currentMa.toLong() * x.voltageMv) / 1_000_000f; pCnt[m]++ }
                 }
