@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="guard_desc">偵測目前前景的 App,套用你設定的封鎖、專注與短影音(Reels/Shorts)防護規則。所有判斷只在本機進行,不收集、不儲存、不傳送任何畫面內容。</string>
+</resources>
